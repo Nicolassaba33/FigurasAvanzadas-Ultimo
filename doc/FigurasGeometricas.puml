@@ -1,0 +1,88 @@
+@startuml FigurasGeometricas
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class HerramientaDeAzar {
+    + HerramientaDeAzar()
+    + getFiguraAleatoria() : FiguraGeometrica
+}
+
+interface Comparable <<interface>>
+
+class GestorFiguras {
+    - HerramientaDeAzar generador
+    - List<FiguraGeometrica> figuras
+    + GestorFiguras()
+    + agregarFiguraAleatoria()
+    + crearFigurasAleatoriamente(Integer cantidad)
+    + listarFigurasColeccionadas()
+    + listarFigurasOrdenadas()
+    + listarFigurasSegunDistanciaAlOrigen()
+}
+
+enum Forma <<enum>> {
+    + toString() : String
+}
+
+class FiguraGeometrica <<abstract>> {
+    - String id
+    - Posicion posicion
+    + abstract getPerimetro() : Double
+    + abstract getSuperficie() : Double
+    + compareTo(FiguraGeometrica f) : int
+}
+
+class Circulo {
+    - static final Integer MAX_RADIO
+    - static Integer nroSerie
+    - Integer radio
+    + setRadio(Integer radio)
+    - getNroSerie() : Integer
+    + toString() : String
+}
+
+class Rectangulo {
+    - static final Integer MAX_LADO
+    - static Integer nroSerie
+    - Integer base
+    - Integer altura
+    - getNroSerie() : Integer
+    + toString() : String
+}
+
+class Triangulo {
+    - static final Integer MAX_ALTURA
+    - static Integer nroSerie
+    - Integer base
+    - Integer altura
+    - getNroSerie() : Integer
+    + toString() : String
+}
+
+class Posicion {
+    - Integer x
+    - Integer y
+    + distanciaAlOrigen() : Double
+    + toString() : String
+    + compareTo(Posicion otro) : int
+}
+
+HerramientaDeAzar --> GestorFiguras
+HerramientaDeAzar --> FiguraGeometrica
+HerramientaDeAzar -> Forma
+
+Forma --> FiguraGeometrica
+
+Comparable ..|> FiguraGeometrica
+Comparable ..|> Posicion
+
+GestorFiguras -> FiguraGeometrica
+
+FiguraGeometrica <|-- Triangulo
+FiguraGeometrica <|-- Rectangulo
+FiguraGeometrica <|-- Circulo
+
+FiguraGeometrica -> Posicion
+
+@enduml

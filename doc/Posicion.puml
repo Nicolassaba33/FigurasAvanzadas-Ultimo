@@ -1,0 +1,21 @@
+@startuml Posicion
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+interface Comparable <<interface>> 
+
+class Posicion #LightPink {
+    - Integer x
+    - Integer y
+    + distanciaAlOrigen() : Double
+    + toString() : String
+    + compareTo(Posicion otro) : int
+}
+
+Comparable --> Posicion
+
+FiguraGeometrica -> Posicion
+
+@enduml
+

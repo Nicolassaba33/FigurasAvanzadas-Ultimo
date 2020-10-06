@@ -1,0 +1,28 @@
+@startuml GestorFiguras
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class HerramientaDeAzar {
+    + HerramientaDeAzar()
+    + getFiguraAleatoria() : FiguraGeometrica
+}
+
+class GestorFiguras #LightPink {
+    - HerramientaDeAzar generador
+    - List<FiguraGeometrica> figuras
+    + GestorFiguras()
+    + agregarFiguraAleatoria()
+    + crearFigurasAleatoriamente(Integer cantidad)
+    + listarFigurasColeccionadas()
+    + listarFigurasOrdenadas()
+    + listarFigurasSegunDistanciaAlOrigen()
+}
+
+
+HerramientaDeAzar --> GestorFiguras
+HerramientaDeAzar --> FiguraGeometrica
+
+GestorFiguras -> FiguraGeometrica
+
+@enduml

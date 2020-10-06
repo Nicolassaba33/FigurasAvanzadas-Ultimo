@@ -1,0 +1,43 @@
+@startuml Triangulo
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+interface Comparable <<interface>>
+
+class FiguraGeometrica <<abstract>> {
+    - String id
+    - Posicion posicion
+    + abstract getPerimetro() : Double
+    + abstract getSuperficie() : Double
+    + compareTo(FiguraGeometrica f) : int
+}
+
+class Triangulo #LightPink {
+    - static final Integer MAX_ALTURA
+    - static Integer nroSerie
+    - Integer base
+    - Integer altura
+    - getNroSerie() : Integer
+    + setBase(Integer base)
+    + setAltura(Integer altura)
+    + toString() : String
+}
+
+class Posicion {
+    - Integer x
+    - Integer y
+    + distanciaAlOrigen() : Double
+    + toString() : String
+    + compareTo(Posicion otro) : int
+}
+
+Comparable -> FiguraGeometrica
+
+FiguraGeometrica <|-- Triangulo
+FiguraGeometrica <|-- Rectangulo
+FiguraGeometrica <|-- Circulo
+
+FiguraGeometrica -> Posicion
+
+@enduml
