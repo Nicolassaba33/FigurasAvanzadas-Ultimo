@@ -1,5 +1,7 @@
 package FigurasAvanzadas;
 
+import java.util.function.DoublePredicate;
+
 public class Triangulo extends FiguraGeometrica {
     // La constante se usa para BASE y ALTURA
     private static final Integer MAX_ALTURA = 1000;
@@ -33,7 +35,7 @@ public class Triangulo extends FiguraGeometrica {
      */
     public Triangulo (Integer base, Integer altura) {
         // TODO - Implementar el metodo
-    public Triangulo(Integer base,integer altura){
+    public Triangulo(Integer base,Double altura){
         setBase(base);
         setAltura(base);
         setId("Triangulo" + getNroSerie());

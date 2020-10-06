@@ -23,17 +23,17 @@ public class CirculoTest {
 
     @Test
     public void testConstrutor1Argumento () {
-        assertEquals(Double.valueOf(170), c1.getDiametro());
+        assertEquals(Integer.valueOf(170), c1.getDiametro());
         assertEquals(Integer.valueOf(170), c1.getRadio());
-        assertEquals(Double.valueOf(90), c2.getDiametro());
+        assertEquals(Integer.valueOf(90), c2.getDiametro());
         assertEquals(Integer.valueOf(90), c2.getRadio());
     }
 
     @Test
     public void testConstrutoc2Argumentos () {
-        assertEquals(Double.valueOf(150), c3.getDiametro());
+        assertEquals(Integer.valueOf(150), c3.getDiametro());
         assertEquals(Integer.valueOf(90), c3.getRadio());
-        assertEquals(Double.valueOf(210), c4.getDiametro());
+        assertEquals(Integer.valueOf(210), c4.getDiametro());
         assertEquals(Integer.valueOf(190), c4.getRadio());
     }
 
@@ -47,24 +47,24 @@ public class CirculoTest {
 
     // @DisplayName("Verifica valor de la base")
     @Test
-    public void testSetBase () {
-        assertEquals(Double.valueOf(170), c1.getDiametro());
+    public void testSetRadio() {
+        assertEquals(Integer.valueOf(170), c1.getRadio());
         c1.setRadio(-1);
-        assertEquals(Double.valueOf(170), c1.getDiametro());
+        assertEquals(Integer.valueOf(170), c1.getRadio());
         c1.setRadio(0);
-        assertEquals(Double.valueOf(170), c1.getDiametro());
+        assertEquals(Integer.valueOf(170), c1.getRadio());
         c1.setRadio(1);
-        assertEqual(Double.r.valueOf(1), c1.getDiametro());
+        assertEquals(Integer.valueOf(1), c1.getRadio());
         c1.setRadio(100);
-        assertEquals(Double.valueOf(100), c1.getDiametro());
+        assertEquals(Integer.valueOf(100), c1.getRadio());
         c1.setRadio(600);
-        assertEquals(Double.valueOf(100), c1.getDiametro());
+        assertEquals(Integer.valueOf(100), c1.getRadio());
         c1.setRadio(501);
-        assertEquals(Double.valueOf(100), c1.getDiametro());
+        assertEquals(Integer.valueOf(100), c1.getRadio());
         c1.setRadio(500);
-        assertEquals(Double.valueOf(500), c1.getDiametro());
+        assertEquals(Integer.valueOf(500), c1.getRadio());
         c1.setRadio(499);
-        assertEquals(Double.valueOf(499), c1.getDiametro());
+        assertEquals(Integer.valueOf(499), c1.getRadio());
     }
 
     // @DisplayName("Verifica valor de la altura")
